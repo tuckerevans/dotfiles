@@ -22,14 +22,3 @@ colorscheme default
 
 au BufRead,BufNewFile *.go set filetype=go
 
-call plug#begin('~/.vim/plugged')
-Plug 'townk/vim-autoclose'
-Plug 'scrooloose/nerdtree'
-Plug 'airblade/vim-gitgutter'
-"Plug 'fatih/vim-go'
-"Plug 'larvag/vimtex'
-"Plug 'rykka/riv.vim'
-"Plug 'rykka/instantrst'
-call plug#end()
-
-
