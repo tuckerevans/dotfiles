@@ -1,6 +1,8 @@
 # .bashrc
 set -o vi
 
+source ~/.pass_completion
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 

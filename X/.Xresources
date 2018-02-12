@@ -1,7 +1,8 @@
-XTerm*faceName: courier
-UXTerm*faceName: courier
-XTerm*faceSize: 14
-UXTerm*faceSize: 14
+XTerm*faceName: Terminus
+UXTerm*faceName: Terminus
+
+XTerm*faceSize: 16
+UXTerm*faceSize: 16
 
 XTerm*allowBoldFont: false
 UXTerm*allowBoldFont: false
