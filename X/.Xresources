@@ -1,8 +1,8 @@
-XTerm*faceName: Terminus
-UXTerm*faceName: Terminus
+XTerm*faceName: !FONT
+UXTerm*faceName: !FONT
 
-XTerm*faceSize: 16
-UXTerm*faceSize: 16
+XTerm*faceSize: !FONT_SIZE
+UXTerm*faceSize: !FONT_SIZE
 
 XTerm*allowBoldFont: false
 UXTerm*allowBoldFont: false

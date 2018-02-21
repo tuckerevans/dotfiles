@@ -4,7 +4,26 @@ Tucker's Dotfiles
 These dotfiles are here mostly to move them between my computers and 
 as a backup, but feel free to use them yourself.
 
-vim plugins
+Branches
+--------
+
+I keep the master branch as templates for new systems. Each of my
+computers then have their own branch, this is to account for different
+font size and other necessary changes. Any changes that need to be
+made i.e. font change, are changed to "!INPUT" in files for easy
+search/repace. Example, Xresourses:
+::
+  XTerm*faceName: !FONT
+  UXTerm*faceName: !FONT
+  
+  XTerm*faceSize: !FONT_SIZE
+  UXTerm*faceSize: !FONT_SIZE
+  
+  XTerm*allowBoldFont: false
+  UXTerm*allowBoldFont: false
+
+
+Vim Plugins
 -----------
 I keep my vim plugins as submodules in this repo, I use
 `github.com/tuckerevans/plugVim <https://www.github.com/tuckerevans/plugvim>`_
