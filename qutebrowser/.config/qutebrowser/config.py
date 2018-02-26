@@ -9,3 +9,5 @@ config.load_autoconfig()
 config.bind('gt', 'tab-next')
 config.bind('gT', 'tab-prev')
 config.bind('x', 'tab-close')
+
+c.aliases['r'] = 'open'
