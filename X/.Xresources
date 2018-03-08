@@ -1,5 +1,6 @@
-XTerm*faceName: Terminus
-UXTerm*faceName: Terminus
+XTerm*faceName: 3270Medium Nerd Font
+UXTerm*faceName: 3270Medium Nerd Font
+
 
 XTerm*faceSize: 16
 UXTerm*faceSize: 16

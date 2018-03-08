@@ -19,6 +19,8 @@ alias art='school && cd HIS1031'
 alias xcopy='xclip -selection clipboard'
 alias xpaste='xclip -selection clipboard -o'
 
+alias rtv='rtv --enable-media'
+
 alias sloc='sloccount'
 
 PS1='[\u@\h \W]\$ '
@@ -26,4 +28,11 @@ PS1='[\u@\h \W]\$ '
 export GPG_TTY=$(tty)
 
 MAIL=/var/spool/mail/tje && export MAIL
-export EDITOR=vi
+export EDITOR=vim
+
+
+export IRCNICK="TropicalTea"
+export IRCNAME="tje"
+export IRCSERVER="chat.freenode.net"
+
+alias word=wordgrinder

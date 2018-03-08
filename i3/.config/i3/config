@@ -30,7 +30,7 @@ font pango:Courier Prime 14
 floating_modifier $mod
 
 # start a terminal
- bindsym $mod+Return exec xterm tmux
+ bindsym $mod+Return exec xterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -159,6 +159,7 @@ bindsym $mod+r mode "resize"
 
 bar {
         status_command i3status
+	separator_symbol " | "
 #	colors {
 #		background #414A59
 #		statusline  #F5F6F7
@@ -189,3 +190,6 @@ exec --no-startup-id /home/tje/i3-battery-popup -N
 
 bindsym $mod+b exec qutebrowser
 bindsym $mod+p exec passmenu
+
+for_window [class="mpv"] floating enable
+for_window [class="feh"] floating enable
