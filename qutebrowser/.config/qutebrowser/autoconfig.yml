@@ -3,4 +3,11 @@
 
 config_version: 1
 global:
+  bindings.commands:
+    normal:
+      M: hint links spawn mpv {hint-url} --autofit 1120x840
+      gT: tab-prev
+      gt: tab-next
+      m: spawn mpv {url} --autofit 640x480
+      x: tab-close
   zoom.default: '150'

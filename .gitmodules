@@ -7,3 +7,6 @@
 [submodule "vim/.vim/pack/tje/start/vim-autoclose"]
 	path = vim/.vim/pack/tje/start/vim-autoclose
 	url = git@github.com:Townk/vim-autoclose.git
+[submodule "vim/.vim/pack/tje/start/wordCount.vim"]
+	path = vim/.vim/pack/tje/start/wordCount.vim
+	url = git@github.com:ChesleyTan/wordCount.vim.git

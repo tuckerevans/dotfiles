@@ -1,24 +1,15 @@
 #======================================================#
 # Boring details
-set realname = tje
-set from = "Tucker Evans <tuckerevans24@gmail.com>"
+set realname = "Tucker Evans"
+set from = "<tuckerevans24@gmail.com>"
 set use_from = yes
-set envelope_from ="yes"
-set sendmail="/usr/bin/msmtp"
+set use_envelope_from ="yes"
+set mbox_type=Maildir
 
 # If not set in environment variables:
-set spoolfile = /var/spool/mail/tje
 
-#======================================================#
-# Folders
-set folder="~/Mail"                # Mailboxes in here
-set record="+sent"                 # where to store sent messages
-set postponed="+postponed"         # where to store draft messages
-set move=no                        # Don't move mail from the spool.
-
-#======================================================#
 # Watch these mailboxes for new mail:
-mailboxes ! +Fetchmail +slrn +mutt
+mailboxes ! +mutt
 set sort_browser=alpha    # Sort mailboxes by alpha(bet)
 
 #======================================================#
@@ -52,26 +43,39 @@ set sort = reverse-date-received
 
 alternative_order text/plain text/html
 auto_view text/html
+
+folder-hook '~/Mail/gmail.com' 'source ~/.mutt/gmail.com'
+folder-hook '~/Mail/ohmnii.com/inbox' 'source ~/mutt/ohmnii.com'
+folder-hook '~/Mail/landmark.edu' 'source ~/mutt/landmark.edu'
+
+
+macro index <f2> '<sync-mailbox><change-folder>~/Mail/gmail/inbox<enter><enter-command>source ~/.mutt/gmail.com<enter>'
+macro index <f3> '<sync-mailbox><change-folder>~/Mail/ohmnii/inbox<enter><enter-command>source ~/.mutt/ohmnii.com<enter>'
+macro index <f4> '<sync-mailbox><change-folder>~/Mail/landmark/inbox<enter><enter-command>source ~/.mutt/landmark.edu<enter>'
+
 # -*-muttrc-*-
 
 # Palette for use with the Linux console.  Black background.
 
-#color hdrdefault blue black
-#color quoted blue black
-#color signature blue black
-#color attachment red black
-#color prompt brightmagenta black
-#color message brightred black
-#color error brightred black
-#color indicator black red
-#color status brightgreen blue
-#color tree white black
-#color normal white black
-#color markers blue black
-#color search white black
-#color tilde brightmagenta black
-#color index blue black ~F
-#color index red black "~N|~O"
+color hdrdefault white black
+color quoted blue black
+color signature blue black
+color attachment red black
+color prompt white black
+color message brightred black
+color error brightred black
+color indicator black white
+color tree white black
+color normal white black
+color markers blue black
+color search white black
+color tilde brightmagenta black
+color index red black ~F
+color index brightwhite black "~N|~O"
 
-# color body brightwhite black '\*+[^*]+\*+'
-# color body brightwhite black '_+[^_]+_+'
+color body brightwhite black '\*+[^*]+\*+'
+color body brightwhite black '_+[^_]+_+'
+
+
+#default mailbox
+source ~/.mutt/gmail.com

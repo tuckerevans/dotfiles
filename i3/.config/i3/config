@@ -159,6 +159,7 @@ bindsym $mod+r mode "resize"
 
 bar {
         status_command i3status
+	separator_symbol " | "
 #	colors {
 #		background #414A59
 #		statusline  #F5F6F7
@@ -187,5 +188,13 @@ bindsym XF86AudioPrev exec playerctl previous
 exec --no-startup-id synclient NaturalScrolling=1  VertScrollDelta=-113
 exec --no-startup-id /home/tje/i3-battery-popup -N
 
+<<<<<<< HEAD
 bindsym $mod+b exec !BROWSER
 bindsym $mod+p exec passmenu
+=======
+bindsym $mod+b exec qutebrowser
+bindsym $mod+p exec passmenu
+
+for_window [class="mpv"] floating enable
+for_window [class="feh"] floating enable
+>>>>>>> ursa_minor

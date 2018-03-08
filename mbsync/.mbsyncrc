@@ -1,0 +1,142 @@
+IMAPAccount gmail
+Host imap.gmail.com
+User tuckerevans24@gmail.com
+PassCmd "pass show google_app_passwords/mbsync"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+#The trailing "/" is important
+Path ~/Mail/gmail/
+Inbox ~/Mail/gmail/inbox
+
+Channel gmail-default
+Master :gmail-remote:
+Slave :gmail-local:inbox
+
+Channel gmail-sent
+Master :gmail-remote:"[Gmail]/Sent Mail"
+Slave :gmail-local:sent
+
+#Channel gmail-trash
+#Master :gmail-remote:"Trash"
+#Slave :gmail-local:trash
+
+#Channel gmail-archive
+#Master :gmail-remote:"[Gmail]/All Mail"
+#Slave :gmail-local:all
+
+
+#Channel gmail-junk
+#Master :gmail-remote:"Archives"
+#Slave :gmail-local:junk
+
+Create Both
+Expunge Both
+SyncState *
+
+Group gmail
+Channel gmail-default
+#Channel gmail-trash
+#Channel gmail-archive
+Channel gmail-sent
+#Channel gmail-junk
+
+#######################################
+
+IMAPAccount ohmnii
+Host imap.mail.us-east-1.awsapps.com
+User tucker@ohmnii.com
+PassCmd "pass show email/ohmnii.com"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore ohmnii-remote
+Account ohmnii
+
+MaildirStore ohmnii-local
+Path ~/Mail/ohmnii/
+Inbox ~/Mail/ohmnii/inbox
+
+Channel ohmnii-default
+Master :ohmnii-remote:
+Slave :ohmnii-local:inbox
+
+Channel ohmnii-sent
+Master :ohmnii-remote:"Sent Items"
+Slave :ohmnii-local:sent
+
+#Channel ohmnii-trash
+#Master :ohmnii-remote:"Deleted Items"
+#Slave :ohmnii-local:trash
+
+#Channel ohmnii-archive
+#Master :ohmnii-remote:"Archives"
+#Slave :ohmnii-local:all
+
+#Channel ohmnii-junk
+#Master :ohmnii-remote:"Junk Email"
+#Slave :ohmnii-local:junk
+
+Create Both
+Expunge Both
+SyncState *
+
+Group ohmnii
+Channel ohmnii-default
+#Channel ohmnii-trash
+#Channel ohmnii-archive
+Channel ohmnii-sent
+#Channel ohmnii-junk
+
+
+#######################################
+
+IMAPAccount landmark
+Host outlook.office365.com
+Port 993
+User tuckerevans@landmark.edu
+PassCmd "pass show email/landmark.edu"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore landmark-remote
+Account landmark
+
+MaildirStore landmark-local
+Path ~/Mail/landmark/
+Inbox ~/Mail/landmark/inbox
+
+Channel landmark-default
+Master :landmark-remote:
+Slave :landmark-local:inbox
+
+Channel landmark-sent
+Master :landmark-remote:"Sent Items"
+Slave :landmark-local:sent
+
+#Channel landmark-trash
+#Master :landmark-remote:"Deleted Items"
+#Slave :landmark-local:trash
+
+#Channel landmark-archive
+#Master :landmark-remote:"Archives"
+#Slave :landmark-local:all
+
+#Channel landmark-junk
+#Master :landmark-remote:"Junk Email"
+#Slave :landmark-local:junk
+
+Create Both
+Expunge Both
+SyncState *
+
+Group landmark
+Channel landmark-default
+#Channel landmark-trash
+#Channel landmark-archive
+Channel landmark-sent
+#Channel landmark-junk

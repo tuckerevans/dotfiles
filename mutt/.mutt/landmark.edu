@@ -1,0 +1,11 @@
+set from="Tucker Evans <tuckerevans@landmark.edu>"
+set hostname="landmark.edu"
+set folder="~/Mail/landmark"
+set mbox="~/Mail/landmark"
+set record="~/Mail/landmark/sent"
+set postponed="~/Mail/landmark/drafts"
+set spoolfile="~/Mail/landmark/inbox"
+
+set sendmail="/usr/bin/msmtp -a landmark"
+
+color status black cyan
