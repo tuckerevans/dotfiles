@@ -1,5 +1,5 @@
-XTerm*faceName: 3270Medium Nerd Font
-UXTerm*faceName: 3270Medium Nerd Font
+XTerm*faceName: IBM 3270
+UXTerm*faceName: IBM 3270
 
 
 XTerm*faceSize: 16
