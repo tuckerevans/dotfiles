@@ -10,3 +10,6 @@
 [submodule "vim/.vim/pack/tje/start/wordCount.vim"]
 	path = vim/.vim/pack/tje/start/wordCount.vim
 	url = git@github.com:ChesleyTan/wordCount.vim.git
+[submodule "bash/.git-prompt"]
+	path = bash/.git-prompt
+	url = https://github.com/magicmonty/bash-git-prompt.git
