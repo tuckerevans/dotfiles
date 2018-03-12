@@ -1,8 +1,8 @@
-XTerm*faceName: !FONT
-UXTerm*faceName: !FONT
+XTerm*faceName: Dina
+UXTerm*faceName: Dina
 
-XTerm*faceSize: !FONT_SIZE
-UXTerm*faceSize: !FONT_SIZE
+XTerm*faceSize: 6
+UXTerm*faceSize: 6
 
 XTerm*allowBoldFont: false
 UXTerm*allowBoldFont: false
