@@ -2,6 +2,8 @@
 set -o vi
 
 source ~/.pass_completion
+HISTSIZE=1000
+HISTFILESIZE=8000
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return

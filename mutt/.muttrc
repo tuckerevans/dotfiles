@@ -41,8 +41,8 @@ push <show-version>  # Shows mutt version at startup
 
 set sort = reverse-date-received
 
-alternative_order text/plain text/html
 auto_view text/html
+alternative_order text/plain text/enriched text/html
 
 folder-hook '~/Mail/gmail.com' 'source ~/.mutt/gmail.com'
 folder-hook '~/Mail/ohmnii.com/inbox' 'source ~/mutt/ohmnii.com'
