@@ -22,4 +22,4 @@ colorscheme default
 
 au BufRead,BufNewFile *.go set filetype=go
 
-set statusline+=%{WordCount#WordCount()}
+filetype plugin on
