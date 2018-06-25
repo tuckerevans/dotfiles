@@ -18,7 +18,7 @@ set listchars=eol:\ ,tab:\|\ ,trail:~,extends:>,precedes:<,space:·
 map K i<enter><esc>
 map W <esc>:WordCount<enter>
 
-colorscheme default
+colorscheme moonfly
 
 au BufRead,BufNewFile *.go set filetype=go
 
