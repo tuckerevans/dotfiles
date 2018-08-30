@@ -21,5 +21,13 @@ map W <esc>:WordCount<enter>
 colorscheme moonfly
 
 au BufRead,BufNewFile *.go set filetype=go
+au BufRead,BufNewFile *.ldg set filetype=ledger
+
+function LedgerSort()
+	:%! ledger -f - print --sort 'date, amount'
+	:%LedgerAlign
+	:%s/^    /\t/g
+endfunction
+command LedgerSort call LedgerSort()
 
 filetype plugin on
