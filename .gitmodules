@@ -16,3 +16,6 @@
 [submodule "vim/.vim/pack/tje/start/vim-go"]
 	path = vim/.vim/pack/tje/start/vim-go
 	url = https://github.com/fatih/vim-go
+[submodule "vim/.vim/pack/tje/start/vim-ledger"]
+	path = vim/.vim/pack/tje/start/vim-ledger
+	url = https://github.com/ledger/vim-ledger.git
