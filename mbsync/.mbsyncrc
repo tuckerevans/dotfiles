@@ -93,50 +93,86 @@ Channel ohmnii-sent
 #Channel ohmnii-junk
 
 
-#######################################
+##########
+#Landmark#
+##########
+#IMAPAccount landmark
+#Host outlook.office365.com
+#Port 993
+#User tuckerevans@landmark.edu
+#PassCmd "pass show email/landmark.edu"
+#SSLType IMAPS
+#CertificateFile /etc/ssl/certs/ca-certificates.crt
+#
+#IMAPStore landmark-remote
+#Account landmark
+#
+#MaildirStore landmark-local
+#Path ~/Mail/landmark/
+#Inbox ~/Mail/landmark/inbox
+#
+#Channel landmark-default
+#Master :landmark-remote:
+#Slave :landmark-local:inbox
+#
+#Channel landmark-sent
+#Master :landmark-remote:"Sent Items"
+#Slave :landmark-local:sent
+#
+##Channel landmark-trash
+##Master :landmark-remote:"Deleted Items"
+##Slave :landmark-local:trash
+#
+##Channel landmark-archive
+##Master :landmark-remote:"Archives"
+##Slave :landmark-local:all
+#
+##Channel landmark-junk
+##Master :landmark-remote:"Junk Email"
+##Slave :landmark-local:junk
+#
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Group landmark
+#Channel landmark-default
+##Channel landmark-trash
+##Channel landmark-archive
+#Channel landmark-sent
+##Channel landmark-junk
+###########################################
 
-IMAPAccount landmark
-Host outlook.office365.com
-Port 993
-User tuckerevans@landmark.edu
-PassCmd "pass show email/landmark.edu"
+##########
+#Clarkson#
+##########
+IMAPAccount clarkson
+Host imap.gmail.com
+User evanst@clarkson.edu
+PassCmd "pass show clarkson/app-passwords/mbsync"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-IMAPStore landmark-remote
-Account landmark
+IMAPStore clarkson-remote
+Account clarkson
 
-MaildirStore landmark-local
-Path ~/Mail/landmark/
-Inbox ~/Mail/landmark/inbox
+MaildirStore clarkson-local
+#The trailing "/" is important
+Path ~/Mail/clarkson/
+Inbox ~/Mail/clarkson/inbox
 
-Channel landmark-default
-Master :landmark-remote:
-Slave :landmark-local:inbox
+Channel clarkson-default
+Master :clarkson-remote:
+Slave :clarkson-local:inbox
 
-Channel landmark-sent
-Master :landmark-remote:"Sent Items"
-Slave :landmark-local:sent
-
-#Channel landmark-trash
-#Master :landmark-remote:"Deleted Items"
-#Slave :landmark-local:trash
-
-#Channel landmark-archive
-#Master :landmark-remote:"Archives"
-#Slave :landmark-local:all
-
-#Channel landmark-junk
-#Master :landmark-remote:"Junk Email"
-#Slave :landmark-local:junk
+Channel clarkson-sent
+Master :clarkson-remote:"[Gmail]/Sent Mail"
+Slave :clarkson-local:sent
 
 Create Both
 Expunge Both
 SyncState *
 
-Group landmark
-Channel landmark-default
-#Channel landmark-trash
-#Channel landmark-archive
-Channel landmark-sent
-#Channel landmark-junk
+Group clarkson
+Channel clarkson-default
+Channel clarkson-sent
