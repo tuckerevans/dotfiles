@@ -29,7 +29,7 @@ ipv6 {
 }
 
 wireless _first_ {
-	format_up = "W:%quality %ip"
+	format_up = "%essid:%quality %ip"
 	format_down = "W: down"
 }
 
