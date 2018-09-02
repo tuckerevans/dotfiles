@@ -1,0 +1,11 @@
+set from = "evanst@clarkson.edu"
+set hostname = "clarkson.edu"
+set folder = "~/Mail/clarkson"
+set mbox = "~/Mail/clarkson"
+set record = "~/Mail/clarkson/sent"
+set postponed = "~/Mail/clarkson/Drafts"
+set spoolfile = "~/Mail/clarkson/inbox"
+
+set sendmail = "/usr/bin/msmtp -a clarkson"
+
+color status black yellow
