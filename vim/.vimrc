@@ -18,8 +18,16 @@ set listchars=eol:\ ,tab:\|\ ,trail:~,extends:>,precedes:<,space:·
 map K i<enter><esc>
 map W <esc>:WordCount<enter>
 
-colorscheme default
+colorscheme moonfly
 
 au BufRead,BufNewFile *.go set filetype=go
+au BufRead,BufNewFile *.ldg set filetype=ledger
 
-set statusline+=%{WordCount#WordCount()}
+function LedgerSort()
+	:%! ledger -f - print --sort 'date, amount'
+	:%LedgerAlign
+	:%s/^    /\t/g
+endfunction
+command LedgerSort call LedgerSort()
+
+filetype plugin on

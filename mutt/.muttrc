@@ -41,17 +41,19 @@ push <show-version>  # Shows mutt version at startup
 
 set sort = reverse-date-received
 
-alternative_order text/plain text/html
 auto_view text/html
+alternative_order text/plain text/enriched text/html
 
 folder-hook '~/Mail/gmail.com' 'source ~/.mutt/gmail.com'
 folder-hook '~/Mail/ohmnii.com/inbox' 'source ~/mutt/ohmnii.com'
 folder-hook '~/Mail/landmark.edu' 'source ~/mutt/landmark.edu'
+folder-hook '~/Mail/clarkson.edu' 'source ~/mutt/clarkson.edu
 
 
 macro index <f2> '<sync-mailbox><change-folder>~/Mail/gmail/inbox<enter><enter-command>source ~/.mutt/gmail.com<enter>'
 macro index <f3> '<sync-mailbox><change-folder>~/Mail/ohmnii/inbox<enter><enter-command>source ~/.mutt/ohmnii.com<enter>'
-macro index <f4> '<sync-mailbox><change-folder>~/Mail/landmark/inbox<enter><enter-command>source ~/.mutt/landmark.edu<enter>'
+macro index <f4> '<sync-mailbox><change-folder>~/Mail/clarkson/inbox<enter><enter-command>source ~/.mutt/clarkson.edu<enter>'
+macro index <f5> '<sync-mailbox><change-folder>~/Mail/landmark/inbox<enter><enter-command>source ~/.mutt/landmark.edu<enter>'
 
 # -*-muttrc-*-
 

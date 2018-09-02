@@ -1,0 +1,11 @@
+browser "firefox"
+player "mpg123"
+text-width 74
+download-path "~/podDownloads/%n"
+save-path "~/podDownloads"
+bind-key j down
+bind-key k up
+bind-key g home
+bind-key G end
+bind-key h quit
+bind-key l open

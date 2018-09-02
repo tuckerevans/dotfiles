@@ -11,8 +11,8 @@ I keep the master branch as templates for new systems. Each of my
 computers then have their own branch, this is to account for different
 font size and other necessary changes. Any changes that need to be
 made i.e. font change, are changed to "!INPUT" in files for easy
-search/repace. Example, Xresourses:
-::
+search/repace. Example, Xresourses::
+
   XTerm*faceName: !FONT
   UXTerm*faceName: !FONT
   
