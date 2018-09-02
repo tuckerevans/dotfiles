@@ -1,8 +1,8 @@
-XTerm*faceName: Dina
-UXTerm*faceName: Dina
+XTerm*faceName: Courier 10 Pitch
+UXTerm*faceName: Courier 10 Pitch
 
-XTerm*faceSize: 6
-UXTerm*faceSize: 6
+XTerm*faceSize: 10
+UXTerm*faceSize: 10
 
 XTerm*allowBoldFont: false
 UXTerm*allowBoldFont: false
@@ -11,6 +11,9 @@ UXTerm*boldMode: false
 
 XTerm*colorBDMode: true
 UXTerm*colorBDMode: true
+
+*VT100*translations: #override Shift <Btn1Up>: exec-formatted("firefox '%t'", PRIMARY)
+XTerm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!! COLORS (serious business) !!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

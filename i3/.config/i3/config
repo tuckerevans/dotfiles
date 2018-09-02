@@ -188,6 +188,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 exec --no-startup-id synclient NaturalScrolling=1  VertScrollDelta=-113
 exec --no-startup-id /home/tje/i3-battery-popup -N
+exec /home/tje/.screenSetup.sh
 
 bindsym $mod+b exec firefox
 bindsym $mod+p exec passmenu
