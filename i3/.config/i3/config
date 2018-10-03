@@ -30,7 +30,7 @@ font pango:Courier Prime 8
 floating_modifier $mod
 
 # start a terminal
- bindsym $mod+Return exec uxterm
+ bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -158,7 +158,7 @@ bindsym $mod+r mode "resize"
 #          client.urgent   #F6F6F2 #9A4C4C #BCBFCD
 
 bar {
-        status_command i3status
+        status_command LC_ALL=C i3status
 	separator_symbol " | "
 	font pango: 3270Medium Nerd Font 14
 #	colors {
