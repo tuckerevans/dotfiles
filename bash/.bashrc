@@ -10,13 +10,19 @@ HISTFILESIZE=8000
 
 alias ls='ls --color=auto'
 alias ll='ls -laF'
-alias school='cd /home/tje/Documents/landmark'
-alias embed='school && cd CS2771'
-alias os='school && cd CS3871'
-alias web='school && cd CSC2621'
-alias mobile='school && cd CSC2636'
-alias pol='school && cd POL1011'
-alias art='school && cd HIS1031'
+alias landmark='cd /home/tje/Documents/landmark'
+alias embed='landmark && cd CS2771'
+alias os='landmark && cd CS3871'
+alias web='landmark && cd CSC2621'
+alias mobile='landmark && cd CSC2636'
+alias pol='landmark && cd POL1011'
+alias art='landmark && cd HIS1031'
+
+alias school='cd /home/tje/Documents/clarkson'
+alias fa='school && cd CS345'
+alias pl='school && cd CS341'
+alias phys='school && cd PH131'
+alias calc='school && cd MA131'
 
 alias xcopy='xclip -selection clipboard'
 alias xpaste='xclip -selection clipboard -o'
@@ -60,3 +66,5 @@ GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
 
 source /home/tje/.git-prompt/gitprompt.sh
 
+alias dwarf="/home/tje/Downloads/programs/df_linux/df"
+alias tele="telegram -k /home/tje/Downloads/programs/tg/tg-server.pub"
