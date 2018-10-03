@@ -12,13 +12,16 @@ set spell
 set tw=70
 set ruler
 
+set encoding=utf-8
+
+
 set list
 set listchars=eol:\ ,tab:\|\ ,trail:~,extends:>,precedes:<,space:·
 
 map K i<enter><esc>
 map W <esc>:WordCount<enter>
 
-colorscheme moonfly
+colorscheme default
 
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.ldg set filetype=ledger
