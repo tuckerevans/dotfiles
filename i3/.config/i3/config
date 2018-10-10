@@ -13,7 +13,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Courier Prime 8
+font pango: Courier 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -160,7 +160,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command LC_ALL=C i3status
 	separator_symbol " | "
-	font pango: 3270Medium Nerd Font 14
+	font pango: GohuFonmmmt 10
 #	colors {
 #		background #414A59
 #		statusline  #F5F6F7
@@ -168,9 +168,9 @@ bar {
 }
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
@@ -188,6 +188,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 exec --no-startup-id synclient NaturalScrolling=1  VertScrollDelta=-113
 exec --no-startup-id /home/tje/i3-battery-popup -N
+exec /home/tje/.screenSetup.sh
 
 bindsym $mod+b exec firefox
 bindsym $mod+p exec passmenu

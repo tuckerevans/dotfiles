@@ -1,6 +1,8 @@
 # .bashrc
 set -o vi
 
+PATH=~/bin:$PATH
+
 source ~/.pass_completion
 HISTSIZE=1000
 HISTFILESIZE=8000

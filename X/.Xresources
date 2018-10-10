@@ -1,9 +1,8 @@
-XTerm*faceName: IBM 3270
-UXTerm*faceName: IBM 3270
+XTerm*faceName: Terminus
+UXTerm*faceName: Terminus
 
-
-XTerm*faceSize: 16
-UXTerm*faceSize: 16
+XTerm*faceSize: 10
+UXTerm*faceSize: 10
 
 XTerm*allowBoldFont: false
 UXTerm*allowBoldFont: false
@@ -12,6 +11,9 @@ UXTerm*boldMode: false
 
 XTerm*colorBDMode: true
 UXTerm*colorBDMode: true
+
+*VT100*translations: #override Shift <Btn1Up>: exec-formatted("firefox '%t'", PRIMARY)
+XTerm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!! COLORS (serious business) !!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

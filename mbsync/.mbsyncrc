@@ -176,3 +176,53 @@ SyncState *
 Group clarkson
 Channel clarkson-default
 Channel clarkson-sent
+
+###################
+# tuckerevans.com #
+###################
+
+IMAPAccount tuckerevans
+Host banshee.mxlogin.com
+User tje@tuckerevans.com
+PassCmd "pass show email/tuckerevans.com"
+SSLType IMAPS
+Port 993
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore tuckerevans-remote
+Account tuckerevans
+
+MaildirStore tuckerevans-local
+Path ~/Mail/tuckerevans/
+Inbox ~/Mail/tuckerevans/inbox
+
+Channel tuckerevans-default
+Master :tuckerevans-remote:
+Slave :tuckerevans-local:inbox
+
+Channel tuckerevans-sent
+Master :tuckerevans-remote:"Sent"
+Slave :tuckerevans-local:sent
+
+#Channel tuckerevans-trash
+#Master :tuckerevans-remote:"Trash"
+#Slave :tuckerevans-local:trash
+
+#Channel tuckerevans-archive
+#Master :tuckerevans-remote:"Archives"
+#Slave :tuckerevans-local:all
+
+#Channel tuckerevans-junk
+#Master :tuckerevans-remote:"spam"
+#Slave :tuckerevans-local:junk
+
+Create Both
+Expunge Both
+SyncState *
+
+Group tuckerevans
+Channel tuckerevans-default
+#Channel tuckerevans-trash
+#Channel tuckerevans-archive
+Channel tuckerevans-sent
+#Channel tuckerevans-junk
