@@ -1,5 +1,5 @@
 XTerm*faceName: Terminus
-UXTerm*faceName: Terminus
+UXTerm*faceName: Unifont
 
 XTerm*faceSize: 10
 UXTerm*faceSize: 10

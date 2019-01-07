@@ -4,5 +4,6 @@
 xrdb -merge /home/tje/.Xresources
 start-pulseaudio-x11 &
 ~/.screenSetup.sh
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 exec i3
 exec twm
