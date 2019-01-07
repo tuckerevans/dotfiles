@@ -83,3 +83,11 @@ color body brightwhite black '_+[^_]+_+'
 
 #default mailbox
 source ~/.mutt/gmail.com
+
+bind pager j next-line
+bind pager k previous-line
+bind pager gg top
+bind pager G bottom
+
+bind browser gg first-entry
+bind browser G last-entry
