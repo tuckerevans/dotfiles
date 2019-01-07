@@ -1,4 +1,4 @@
-﻿set number
+﻿set number relativenumber
 syntax enable
 set tabstop=8
 set cursorline
