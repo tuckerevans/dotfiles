@@ -4,8 +4,8 @@ set -o vi
 PATH=~/bin:$PATH
 
 source ~/.pass_completion
-HISTSIZE=1000
-HISTFILESIZE=8000
+HISTSIZE=10000000
+HISTFILESIZE=8000000
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
