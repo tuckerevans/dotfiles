@@ -48,7 +48,7 @@ Channel gmail-sent
 #######################################
 
 IMAPAccount ohmnii
-Host imap.mail.us-east-1.awsapps.com
+Host banshee.mxlogin.com
 User tucker@ohmnii.com
 PassCmd "pass show email/ohmnii.com"
 SSLType IMAPS
@@ -66,11 +66,11 @@ Master :ohmnii-remote:
 Slave :ohmnii-local:inbox
 
 Channel ohmnii-sent
-Master :ohmnii-remote:"Sent Items"
+Master :ohmnii-remote:"Sent"
 Slave :ohmnii-local:sent
 
 #Channel ohmnii-trash
-#Master :ohmnii-remote:"Deleted Items"
+#Master :ohmnii-remote:"Trash"
 #Slave :ohmnii-local:trash
 
 #Channel ohmnii-archive
@@ -177,52 +177,114 @@ Group clarkson
 Channel clarkson-default
 Channel clarkson-sent
 
-###################
-# tuckerevans.com #
-###################
+#######################
+# tje tuckerevans.com #
+#######################
 
-IMAPAccount tuckerevans
+IMAPAccount tje-tuckerevans
 Host banshee.mxlogin.com
 User tje@tuckerevans.com
-PassCmd "pass show email/tuckerevans.com"
+PassCmd "pass show email/tje.tuckerevans.com"
 SSLType IMAPS
 Port 993
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-IMAPStore tuckerevans-remote
-Account tuckerevans
+IMAPStore tje-tuckerevans-remote
+Account tje-tuckerevans
 
-MaildirStore tuckerevans-local
-Path ~/Mail/tuckerevans/
-Inbox ~/Mail/tuckerevans/inbox
+MaildirStore tje-tuckerevans-local
+Path ~/Mail/tuckerevans/tje/
+Inbox ~/Mail/tuckerevans/tje/inbox
 
-Channel tuckerevans-default
-Master :tuckerevans-remote:
-Slave :tuckerevans-local:inbox
+Channel tje-tuckerevans-default
+Master :tje-tuckerevans-remote:
+Slave :tje-tuckerevans-local:inbox
 
-Channel tuckerevans-sent
-Master :tuckerevans-remote:"Sent"
-Slave :tuckerevans-local:sent
+Channel tje-tuckerevans-sent
+Master :tje-tuckerevans-remote:"Sent"
+Slave :tje-tuckerevans-local:sent
 
-#Channel tuckerevans-trash
-#Master :tuckerevans-remote:"Trash"
-#Slave :tuckerevans-local:trash
+Channel tje-tuckerevans-notes
+Master :tje-tuckerevans-remote:"Notes"
+Slave :tje-tuckerevans-local:notes
 
-#Channel tuckerevans-archive
-#Master :tuckerevans-remote:"Archives"
-#Slave :tuckerevans-local:all
+#Channel tje-tuckerevans-trash
+#Master :tje-tuckerevans-remote:"Trash"
+#Slave :tje-tuckerevans-local:trash
 
-#Channel tuckerevans-junk
-#Master :tuckerevans-remote:"spam"
-#Slave :tuckerevans-local:junk
+#Channel tje-tuckerevans-archive
+#Master :tje-tuckerevans-remote:"Archives"
+#Slave :tje-tuckerevans-local:all
+
+#Channel tje-tuckerevans-junk
+#Master :tje-tuckerevans-remote:"spam"
+#Slave :tje-tuckerevans-local:junk
 
 Create Both
 Expunge Both
 SyncState *
 
-Group tuckerevans
-Channel tuckerevans-default
-#Channel tuckerevans-trash
-#Channel tuckerevans-archive
-Channel tuckerevans-sent
-#Channel tuckerevans-junk
+Group tje-tuckerevans
+Channel tje-tuckerevans-default
+#Channel tje-tuckerevans-trash
+#Channel tje-tuckerevans-archive
+Channel tje-tuckerevans-sent
+Channel tje-tuckerevans-notes
+#Channel tje-tuckerevans-junk
+
+
+
+##########################
+# tucker tuckerevans.com #
+##########################
+
+IMAPAccount tucker-tuckerevans
+Host banshee.mxlogin.com
+User tucker@tuckerevans.com
+PassCmd "pass show email/tucker.tuckerevans.com"
+SSLType IMAPS
+Port 993
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore tucker-tuckerevans-remote
+Account tucker-tuckerevans
+
+MaildirStore tucker-tuckerevans-local
+Path ~/Mail/tuckerevans/tucker/
+Inbox ~/Mail/tuckerevans/tucker/inbox
+
+Channel tucker-tuckerevans-default
+Master :tucker-tuckerevans-remote:
+Slave :tucker-tuckerevans-local:inbox
+
+Channel tucker-tuckerevans-sent
+Master :tucker-tuckerevans-remote:"Sent"
+Slave :tucker-tuckerevans-local:sent
+
+#Channel tucker-tuckerevans-notes
+#Master :tucker-tuckerevans-remote:"Notes"
+#Slave :tucker-tuckerevans-local:notes
+
+#Channel tucker-tuckerevans-trash
+#Master :tucker-tuckerevans-remote:"Trash"
+#Slave :tucker-tuckerevans-local:trash
+
+#Channel tucker-tuckerevans-archive
+#Master :tucker-tuckerevans-remote:"Archives"
+#Slave :tucker-tuckerevans-local:all
+
+#Channel tucker-tuckerevans-junk
+#Master :tucker-tuckerevans-remote:"spam"
+#Slave :tucker-tuckerevans-local:junk
+
+Create Both
+Expunge Both
+SyncState *
+
+Group tucker-tuckerevans
+Channel tucker-tuckerevans-default
+#Channel tucker-tuckerevans-trash
+#Channel tucker-tuckerevans-archive
+Channel tucker-tuckerevans-sent
+Channel tucker-tuckerevans-notes
+#Channel tucker-tuckerevans-junk

@@ -47,15 +47,17 @@ alternative_order text/plain text/enriched text/html
 folder-hook '~/Mail/gmail.com' 'source ~/.mutt/gmail.com'
 folder-hook '~/Mail/ohmnii.com/inbox' 'source ~/mutt/ohmnii.com'
 folder-hook '~/Mail/landmark.edu' 'source ~/mutt/landmark.edu'
-folder-hook '~/Mail/clarkson.edu' 'source ~/mutt/clarkson.edu
-folder-hook '~/Mail/tuckerevans.com/inbox' 'source ~/mutt/tuckerevans.com'
+folder-hook '~/Mail/clarkson.edu' 'source ~/mutt/clarkson.edu'
+folder-hook '~/Mail/tuckerevans.com/tje/inbox' 'source ~/mutt/tje.tuckerevans.com'
+folder-hook '~/Mail/tuckerevans.com/tucker/inbox' 'source ~/mutt/tucker.tuckerevans.com'
 
 
 macro index <f1> '<sync-mailbox><change-folder>~/Mail/gmail/inbox<enter><enter-command>source ~/.mutt/gmail.com<enter>'
 macro index <f2> '<sync-mailbox><change-folder>~/Mail/ohmnii/inbox<enter><enter-command>source ~/.mutt/ohmnii.com<enter>'
-macro index <f3> '<sync-mailbox><change-folder>~/Mail/tuckerevans/inbox<enter><enter-command>source ~/.mutt/tuckerevans.com<enter>'
-macro index <f4> '<sync-mailbox><change-folder>~/Mail/clarkson/inbox<enter><enter-command>source ~/.mutt/clarkson.edu<enter>'
-macro index <f5> '<sync-mailbox><change-folder>~/Mail/landmark/inbox<enter><enter-command>source ~/.mutt/landmark.edu<enter>'
+macro index <f3> '<sync-mailbox><change-folder>~/Mail/tuckerevans/tje/inbox<enter><enter-command>source ~/.mutt/tje.tuckerevans.com<enter>'
+macro index <f4> '<sync-mailbox><change-folder>~/Mail/tuckerevans/tucker/inbox<enter><enter-command>source ~/.mutt/tucker.tuckerevans.com<enter>'
+macro index <f5> '<sync-mailbox><change-folder>~/Mail/clarkson/inbox<enter><enter-command>source ~/.mutt/clarkson.edu<enter>'
+macro index <f6> '<sync-mailbox><change-folder>~/Mail/landmark/inbox<enter><enter-command>source ~/.mutt/landmark.edu<enter>'
 
 # -*-muttrc-*-
 
@@ -80,6 +82,18 @@ color index brightwhite black "~N|~O"
 color body brightwhite black '\*+[^*]+\*+'
 color body brightwhite black '_+[^_]+_+'
 
+set include
 
 #default mailbox
 source ~/.mutt/gmail.com
+
+bind pager j next-line
+bind pager k previous-line
+bind pager gg top
+bind pager G bottom
+
+bind index N search-opposite
+bind pager N search-opposite
+
+bind browser gg first-entry
+bind browser G last-entry
