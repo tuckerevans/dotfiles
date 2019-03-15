@@ -2,16 +2,18 @@
 set -o vi
 
 PATH=~/bin:$PATH
+LPDEST=pictor
 
 source ~/.pass_completion
-HISTSIZE=1000
-HISTFILESIZE=8000
+HISTSIZE=-1
+HISTFILESIZE=-1
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
 alias ll='ls -laF'
+alias school='cd ~/Documents/clarkson'
 
 alias xcopy='xclip -selection clipboard'
 alias xpaste='xclip -selection clipboard -o'
