@@ -1,4 +1,4 @@
-﻿set number
+﻿set number relativenumber
 syntax enable
 set tabstop=8
 set cursorline
@@ -12,13 +12,15 @@ set spell
 set tw=70
 set ruler
 
+set foldmethod=marker
+
 set list
 set listchars=eol:\ ,tab:\|\ ,trail:~,extends:>,precedes:<,space:·
 
 map K i<enter><esc>
 map W <esc>:WordCount<enter>
 
-colorscheme moonfly
+colorscheme elflord
 
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.ldg set filetype=ledger
