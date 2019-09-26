@@ -2,9 +2,11 @@
 set -o vi
 
 PATH=~/bin:$PATH
+PATH=~/.local/bin:$PATH
 LPDEST=pictor
 
 source ~/.pass_completion
+source ~/.git-completion.bash
 HISTSIZE=-1
 HISTFILESIZE=-1
 
