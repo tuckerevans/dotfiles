@@ -1,4 +1,5 @@
 ﻿set number relativenumber
+filetype plugin on
 syntax enable
 set tabstop=8
 set cursorline
@@ -22,6 +23,7 @@ map W <esc>:WordCount<enter>
 
 colorscheme elflord
 
+
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.ldg set filetype=ledger
 
@@ -33,3 +35,11 @@ endfunction
 command LedgerSort call LedgerSort()
 
 filetype plugin on
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
