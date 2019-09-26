@@ -1,8 +1,8 @@
-XTerm*faceName: Courier
-UXTerm*faceName: Courier
+XTerm*faceName: Dina
+UXTerm*faceName: Dina
 
-XTerm*faceSize: 12
-UXTerm*faceSize: 12
+XTerm*faceSize: 6
+UXTerm*faceSize: 6
 
 XTerm*allowBoldFont: false
 UXTerm*allowBoldFont: false
