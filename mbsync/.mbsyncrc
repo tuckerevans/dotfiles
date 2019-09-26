@@ -208,6 +208,10 @@ Channel tje-tuckerevans-notes
 Master :tje-tuckerevans-remote:"Notes"
 Slave :tje-tuckerevans-local:notes
 
+Channel tje-tuckerevans-files
+Master :tje-tuckerevans-remote:"Files"
+Slave :tje-tuckerevans-local:files
+
 #Channel tje-tuckerevans-trash
 #Master :tje-tuckerevans-remote:"Trash"
 #Slave :tje-tuckerevans-local:trash
@@ -230,6 +234,7 @@ Channel tje-tuckerevans-default
 #Channel tje-tuckerevans-archive
 Channel tje-tuckerevans-sent
 Channel tje-tuckerevans-notes
+Channel tje-tuckerevans-files
 #Channel tje-tuckerevans-junk
 
 
