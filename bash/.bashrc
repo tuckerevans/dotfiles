@@ -1,11 +1,12 @@
 # .bashrc
 set -o vi
 
-PATH=~/bin:$PATH
+PATH=/sbin:/usr/sbin:~/bin:/usr/local/texlive/2018/bin/x86_64-linux:$PATH
 
 source ~/.pass_completion
-HISTSIZE=10000000
-HISTFILESIZE=8000000
+export HISTSIZE=10000000
+export HISTFILESIZE=80000000
+export HISTCONTROL=ignoreboth
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -67,6 +68,8 @@ GIT_PROMPT_THEME="Custom"; # use theme optimized for solarized color scheme
 GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
 
 source /home/tje/.git-prompt/gitprompt.sh
+source /home/tje/.git-completion.bash
 
 alias dwarf="/home/tje/Downloads/programs/df_linux/df"
 alias tele="telegram -k /home/tje/Downloads/programs/tg/tg-server.pub"
+alias cr="cmus-remote"
