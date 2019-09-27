@@ -2,15 +2,19 @@
 syntax enable
 set tabstop=8
 set cursorline
-set lazyredraw
+"set lazyredraw
 set incsearch
 set hlsearch
 set autoindent
 set scrolloff=3
 set spelllang=en
 set spell
-set tw=70
+set tw=80
 set ruler
+
+set foldmethod=marker
+
+set colorcolumn=70
 
 set encoding=utf-8
 
@@ -21,7 +25,10 @@ set listchars=eol:\ ,tab:\|\ ,trail:~,extends:>,precedes:<,space:·
 map K i<enter><esc>
 map W <esc>:WordCount<enter>
 
-colorscheme default
+"colorscheme elflord
+"set t_Co=256
+set background=light
+colorscheme firewatch
 
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.ldg set filetype=ledger

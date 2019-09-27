@@ -9,3 +9,7 @@ set spoolfile="~/Mail/ohmnii/inbox"
 set sendmail="/usr/bin/msmtp -a ohmnii"
 
 color status black green
+
+set alias_file= ~/.mutt/alias.ohmnii.com
+source $alias_file
+
