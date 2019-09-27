@@ -30,7 +30,7 @@ font pango:Courier Prime 8
 floating_modifier $mod
 
 # start a terminal
- bindsym $mod+Return exec st
+bindsym $mod+Return exec uxterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -160,11 +160,11 @@ bindsym $mod+r mode "resize"
 bar {
         status_command LC_ALL=C i3status
 	separator_symbol " | "
-	font pango: 3270Medium Nerd Font 14
-#	colors {
-#		background #414A59
-#		statusline  #F5F6F7
-#	}
+	font pango: 3270Medium Nerd Font Mono 14
+	colors {
+		background #414A59
+		statusline  #F7F6F7
+	}
 }
 
 # Pulse Audio controls
