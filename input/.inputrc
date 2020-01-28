@@ -2,3 +2,4 @@ $include /etc/inputrc
 
 set editing-mode vi
 set enable-keypad on
+set mark-symlinked-directories on
