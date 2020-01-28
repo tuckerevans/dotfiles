@@ -8,4 +8,7 @@ set spoolfile = "~/Mail/clarkson/inbox"
 
 set sendmail = "/usr/bin/msmtp -a clarkson"
 
+set alias_file = ~/.mutt/alias.clarkson.edu
+source $alias_file
+
 color status black yellow
