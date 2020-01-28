@@ -9,4 +9,5 @@ xinput set-button-map 13 1 2 3 5 4
 
 ~/.screenSetup.sh
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+#exec mate-session
 exec i3

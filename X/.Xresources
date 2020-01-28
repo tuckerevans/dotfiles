@@ -1,8 +1,11 @@
-XTerm*faceName: Inconsolata
-UXTerm*faceName: Inconsolata
+XTerm*faceName:  Input
+UXTerm*faceName: Input
 
-XTerm*faceSize: 16
+XTerm*faceSize:  16
 UXTerm*faceSize: 16
+
+*termName: xterm-256color
+
 
 XTerm*allowBoldFont: false
 UXTerm*allowBoldFont: false
