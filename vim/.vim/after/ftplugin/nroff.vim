@@ -1,2 +1,2 @@
 set spell
-set tw=70
+set tw=0
