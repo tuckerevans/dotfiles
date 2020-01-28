@@ -26,12 +26,14 @@ map K i<enter><esc>
 map W <esc>:WordCount<enter>
 
 "colorscheme elflord
-"set t_Co=256
+set t_Co=256
 set background=light
-colorscheme firewatch
+"colorscheme firewatch
+colorscheme PaperColor
 
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.ldg set filetype=ledger
+au BufRead,BufNewFile *.re set filetype=c
 
 function LedgerSort()
 	:%! ledger -f - print --sort 'date, amount'
