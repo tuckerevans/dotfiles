@@ -19,9 +19,6 @@
 [submodule "vim/.vim/pack/tje/start/vim-ledger"]
 	path = vim/.vim/pack/tje/start/vim-ledger
 	url = https://github.com/ledger/vim-ledger.git
-[submodule "vim/.vim/pack/tje/start/vimtex"]
-	path = vim/.vim/pack/tje/start/vimtex
-	url = git@github.com:lervag/vimtex.git
 [submodule "vim/.vim/pack/tje/start/typescript-vim"]
 	path = vim/.vim/pack/tje/start/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
