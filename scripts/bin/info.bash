@@ -1,0 +1,1 @@
+../dotfiles/lemonbar/bin/info.bash
