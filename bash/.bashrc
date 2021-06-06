@@ -1,7 +1,7 @@
 # .bashrc
 set -o vi
 
-PATH=/sbin:/usr/sbin:~/bin:/usr/local/texlive/2018/bin/x86_64-linux:$PATH
+PATH=~/bin:/sbin:/usr/sbin:/usr/local/texlive/2018/bin/x86_64-linux:$PATH
 
 source ~/.pass_completion
 export HISTSIZE=10000000
