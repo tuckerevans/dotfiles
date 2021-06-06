@@ -34,8 +34,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 8
-    y: 8
+    x: 4
+    y: 4
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -170,16 +170,20 @@ window:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 font:
-  # The normal (roman) font face to use.
+  # The normal (roman) font face to use.#
   normal:
-    family: Inconsolata
+    #family: Iosevka Term
+    #family: Terminus
+    family: Courier Prime
+
     # Style can be specified to pick a specific face.
-    style: Regular
+    style: Light
   bold:
     style: Regular
   italic:
     style: Regular
-  size: 8.0
+  #size: 9.0
+  size: 10.0
 
 # Colors (Tomorrow Night Bright)
 #colors:
@@ -248,6 +252,32 @@ font:
   #  magenta: '#80638e'
   #  cyan:    '#497e7a'
   #  white:   '#9a9a9a'
+  #
+
+
+##Dark Theme
+#colors:
+#  primary:
+#    background:  '#000000'
+#    foreground:  '#a8a8a8'
+#  normal:
+#    white:      '#a8a8a8'
+#    cyan:      '#00a8a8'
+#    magenta:      '#a800a8'
+#    yellow:      '#a85400'
+#    green:      '#00a800'
+#    red:      '#a80000'
+#    blue:      '#0000a8'
+#    black:      '#000000'
+#  bright:
+#    black:      '#545054'
+#    red:      '#f85450'
+#    green:     '#50fc50'
+#    yellow:     '#f8fc50'
+#    blue:     '#5054f8'
+#    magenta:     '#f854f8'
+#    cyan:     '#50fcf8'
+#    white:     '#f8fcf8'
 
 # PaperColor Theme
 colors:
@@ -274,7 +304,7 @@ colors:
     cyan:    '#3E999F'
     white:   '#F5F5F5'
 
-  # Indexed Colors
+# Indexed Colors
   #
   # The indexed colors include all colors from 16 to 256.
   # When these are not set, they're filled with sensible defaults.
@@ -308,7 +338,7 @@ colors:
 #visual_bell:
 #  animation: EaseOutExpo
 #  duration: 0
-#  color: '#ffffff'
+#  color: '#000000'
 
 # Background opacity
 #
