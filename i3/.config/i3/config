@@ -137,10 +137,10 @@ mode "resize" {
         bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 2 px or 2 ppt
+        bindsym Down resize grow height 2 px or 2 ppt
+        bindsym Up resize shrink height 2 px or 2 ppt
+        bindsym Right resize grow width 2 px or 2 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -151,19 +151,26 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-           #                  border  backgr. text
-#           client.focused  #8787AF #5787AF #BCBFCD
-#          client.unfocused_inactive   #2F343F #2F343 #BCBFCD
-#          client.unfocused #2F343F #2F343F #9FA4B7
-#          client.urgent   #F6F6F2 #9A4C4C #BCBFCD
+           #                          border  backgr. text     Indicator
+          client.focused              #555555 #00AAAA #FFFFFF #00FFFF
+          client.unfocused_inactive   #555555 #000000 #555555
+          client.unfocused            #555555 #005555 #AAAAAA
+          client.urgent               #555555 #AA0000 #AAAAAA
 
 bar {
         status_command LC_ALL=C i3status
-	separator_symbol " | "
-	font pango:Dina 10
+	separator_symbol "|"
+	font pango: 3270Medium Nerd Font 12
 	colors {
-		background #414A59
-		statusline  #F7F6F7
+		background #000000
+		statusline #AAAAAA
+
+		focused_workspace #555555 #00AAAA #FFFFFF
+		active_workspace  #555555 #000000 #AAAAAA
+		inactive_workspace  #555555 #005555 #AAAAAA
+		urgent_workspace   #555555 #AA0000 #AAAAAA
+		#background #414A59
+		#statusline  #F7F6F7
 	}
 }
 
@@ -194,3 +201,8 @@ bindsym $mod+p exec passmenu
 
 for_window [class="mpv"] floating enable
 for_window [class="feh"] floating enable
+
+#for_window [class="*"] border pixel 0
+
+#gaps inner 20
+#gaps outer 10
