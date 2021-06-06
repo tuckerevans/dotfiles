@@ -1,7 +1,7 @@
-XTerm*faceName:  Input
-UXTerm*faceName: Input
+XTerm*faceName:  Dina
+UXTerm*faceName: scientifica
 
-XTerm*faceSize:  16
+XTerm*faceSize:  8
 UXTerm*faceSize: 16
 
 *termName: xterm-256color
@@ -20,40 +20,6 @@ XTerm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]]
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!! COLORS (serious business) !!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-
-!! "black"
-!*color0:  #4d4d4d
-!*color8:  #5a5a5a
-!! red
-!*color1:  #C70031
-!*color9:  #F05178
-!! green
-!*color2:  #29CF13
-!*color10: #6CE05C
-!! yellow
-!*color3:  #D8E30E
-!*color11: #F3F79E
-!! blue
-!*color4:  #3449D1
-!*color12: #97A4F7
-!! magenta
-!*color5:  #8400FF
-!*color13: #C495F0
-!! cyan
-!*color6:  #0798AB
-!*color14: #68F2E0
-!! "white"
-!*color7:  #E2D1E3
-!*color15: #FFFFFF
-
-!!*background: #151515
-!!*foreground: #aeaeae
-!*background: black
-!*foreground: white
-
-
 !*background:  rgb:00/00/00
 !*foreground:  rgb:a8/a8/a8
 !

@@ -12,11 +12,16 @@ import "strconv"
 import "strings"
 import "time"
 
+type BatteryLevel struct {
+	display string
+	val     float64
+}
+
 type Status struct {
 	desktops string
 	networks string
 	sound    string
-	battery  string
+	battery  BatteryLevel
 	cpu      string
 	ram      string
 	est      string
@@ -53,7 +58,8 @@ func get_dates(est chan string, utc chan string, done chan bool) {
 	}
 }
 
-func battery(bat chan string, done chan bool) {
+func battery(bat chan BatteryLevel, done chan bool) {
+	var cur_level BatteryLevel
 
 	full_fd, err := os.Open("/sys/class/power_supply/BAT0/charge_full")
 	if err != nil {
@@ -127,8 +133,15 @@ func battery(bat chan string, done chan bool) {
 			} else {
 				tmp = "*"
 			}
-			bat <- fmt.Sprintf("BAT: %s%3.2f%%", tmp,
-				(float64(cur_val)/float64(full_val))*100.00)
+			cur_level.val = (float64(cur_val) /
+				float64(full_val)) *
+				100.00
+			cur_level.display = fmt.Sprintf(
+				"BAT: %s%3.2f%%",
+				tmp, cur_level.val)
+
+			bat <- cur_level
+
 			time.Sleep(5 * time.Second)
 		}
 	}
@@ -146,8 +159,8 @@ func sound_level(sound chan string, done chan bool) {
 		case <-done:
 			return
 		default:
-			sound_out, err := exec.Command("amixer",
-				"get", "Master").Output()
+			sound_out, err := exec.Command("pactl",
+				"list", "sinks").Output()
 			if err != nil {
 				panic(err)
 			}
@@ -391,7 +404,20 @@ func ram_usage(ram chan string, done chan bool) {
 
 func networks(net chan string, done chan bool) {
 
-	time.Sleep(10 * time.Second)
+	for {
+		select {
+		case <-done:
+			return
+		default:
+			network, err := exec.Command("get_network_info.sh").Output()
+			if err != nil {
+				panic(err)
+			}
+
+			net <- strings.TrimSpace(string(network))
+			time.Sleep(10 * time.Second)
+		}
+	}
 }
 
 func desktops(desk chan string, done chan bool) {
@@ -458,18 +484,39 @@ func desktops(desk chan string, done chan bool) {
 }
 
 func update_bar(s *Status) {
+	if s.battery.val < 12.5 {
+		/*012345
+		  BAT: +*/
+		if s.battery.display[5] == '+' {
+			/*              DESK    NET SOUND*/
+			fmt.Printf("%%{l}%s%%{r}%s | %s |",
+				s.desktops, s.networks, s.sound)
+			/*         BAT */
+			fmt.Printf("%%{B#FF0000}%%{F#000000}")
+			fmt.Printf(" %s ", s.battery.display)
+			fmt.Printf("%%{B#000000}%%{F#FFFFFF}")
+			/*           CPU  RAM  EST  UTC*/
+			fmt.Printf("| %s | %s | %s | %s\n",
+				s.cpu, s.ram, s.est, s.utc)
+			return
+		}
+		fmt.Printf("%%{B#FF0000}%%{F#000000}")
+	} else {
+		fmt.Printf("%%{B#000000}%%{F#FFFFFF}")
+	}
 	/*              DESK    NET SOUND BAT CPU  RAM  EST  UTC*/
 	fmt.Printf("%%{l}%s%%{r}%s | %s | %s | %s | %s | %s | %s\n",
 		s.desktops, s.networks, s.sound,
-		s.battery, s.cpu, s.ram, s.est,
+		s.battery.display, s.cpu, s.ram, s.est,
 		s.utc)
+
 }
 
 func main() {
 	desk := make(chan string)
 	net := make(chan string)
 	sound := make(chan string)
-	bat := make(chan string)
+	bat := make(chan BatteryLevel)
 	cpu := make(chan string)
 	ram := make(chan string)
 	est := make(chan string)
@@ -481,10 +528,12 @@ func main() {
 	go sound_level(sound, done)
 	go cpu_levels(cpu, done)
 	go ram_usage(ram, done)
-	//	go networks(net, done)
+	go networks(net, done)
 	go desktops(desk, done)
 
 	var stats Status
+	stats.battery.val = 12.6
+	update_bar(&stats)
 
 	for {
 		select {

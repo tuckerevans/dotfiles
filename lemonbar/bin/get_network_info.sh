@@ -1,7 +1,8 @@
 #!/bin/sh
 
 
-for DEV in `ip -o addr | awk '{if($2 != "lo" && $3 == "inet"){print $2}}'`
+for DEV in `ip -o addr | awk '{if($3 != "lo" && $3 == "inet"){print $2}}' \
+	| grep -v "docker"`
 do
 	SSID=""
 	OUTPUT=""
