@@ -1,0 +1,36 @@
+Tucker's Dotfiles
+=================
+
+These dotfiles are here mostly to move them between my computers and 
+as a backup, but feel free to use them yourself.
+
+Vim Plugins
+-----------
+I keep my vim plugins as submodules in this repo, I use
+`github.com/tuckerevans/plugVim <https://www.github.com/tuckerevans/plugvim>`_
+to manage them.
+
+
+Installation
+------------
+
+dotfiles
+~~~~~~~~
+
+NOTE: I recommend backing up any existing dotfiles you have before
+      installing these, you can do this with the following command
+     `cp .dotfile_to_backup .dotfile_to_backup.bak`
+
+Running `make process` should run the necessary files through m4 and compile my
+input program for lemonbar.
+
+I recomend using https://www.gnu.org/software/stow/[`stow`] to
+manage these files. `make stow` should stow all of these dotfiles.
+This can be also be done with the following command.
+
+`stow [program]` for each program's dotfiles you want to use
+
+====
+Example: `stow vim` or `stow mutt`
+====
+
